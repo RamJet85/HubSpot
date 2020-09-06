@@ -20,6 +20,7 @@ public class LoginPageTest extends BaseTest{
 		String title =loginPage.getLoginPageTitle();
 		System.out.println("The loginPage title is: "+title);
 		Assert.assertEquals(title, Constants.LOGIN_PAGE_TITLE);
+		System.out.println(title);
 	}
 	
 	@Test(priority=1)
