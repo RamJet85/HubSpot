@@ -77,4 +77,15 @@ public class JavaScriptUtils {
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("document.getElementById('" + id + "').value'"+ value + "'");
 	}
+	
+	public void dateSelectByJs(WebElement element, String dateValue ) {
+		
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("arguments[0].setAttribute('value','"+dateValue+"')", element);
+		
+		
+		
+		
+		
+	}
 }

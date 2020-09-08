@@ -34,8 +34,8 @@ public class BasePage {
 	OptionsManager optionsManager;
 	public static String flashElement;
 	//Thread local class provides the thread local variables, these lv are diff from the normal variables. coz thread local variables 
-	//are visible only within the thread and each thread have it's own thread local variables. and the values cannot be visible for 
-	//other threads  
+	//are visible only within the thread and each thread have it's own thread local variables. and the values cannot be visible for other threads  
+	
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
 	
 	/**
@@ -124,7 +124,7 @@ public class BasePage {
 		
 		String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
 		File destination = new File(path);
-		
+				
 		try {
 			FileUtils.copyFile(src, destination);
 		} catch (IOException e) {
