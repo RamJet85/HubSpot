@@ -81,11 +81,7 @@ public class JavaScriptUtils {
 	public void dateSelectByJs(WebElement element, String dateValue ) {
 		
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("arguments[0].setAttribute('value','"+dateValue+"')", element);
-		
-		
-		
-		
+		js.executeScript("arguments[0].setAttribute('value','"+dateValue+"');", element);
 		
 	}
 }

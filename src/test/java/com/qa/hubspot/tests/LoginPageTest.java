@@ -34,7 +34,7 @@ public class LoginPageTest extends BaseTest{
 	public void VerifydoLoginTest() {
 	
 		loginPage.doLogin(prop.getProperty("email"), prop.getProperty("password"));
-		
+				
 	}
 	
 	}

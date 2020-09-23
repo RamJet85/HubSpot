@@ -28,11 +28,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BasePage {
 	
 	// Class variables we can use throughout the class
-	
 	WebDriver driver;
 	Properties prop;
 	OptionsManager optionsManager;
 	public static String flashElement;
+	
 	//Thread local class provides the thread local variables, these lv are diff from the normal variables. coz thread local variables 
 	//are visible only within the thread and each thread have it's own thread local variables. and the values cannot be visible for other threads  
 	
@@ -50,7 +50,7 @@ public class BasePage {
 			FileInputStream fs = new FileInputStream("C:\\Automation\\HubSpotTest\\src\\main\\java\\com\\qa\\hubspot\\"
 					+ "config\\config.properties"); // fetch the file
 			try {
-				prop.load(fs); // properties are available in fis, to load all properties into properties class user load method
+				prop.load(fs); // properties are available in fis, to load all properties into properties class use load method
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -70,7 +70,7 @@ public class BasePage {
 	
 	public WebDriver init_driver(Properties prop) { // give me the list of all properties will pick one from the prop file same as list
 		
-		flashElement =prop.getProperty("highlight").trim(); // flash coming from javascript util
+		flashElement =prop.getProperty("highlight").trim(); // flash coming from java script util
 		
 		String browserName = prop.getProperty("browser");
 		System.out.println(browserName + " is Launching");
@@ -79,7 +79,7 @@ public class BasePage {
 		if(browserName.equalsIgnoreCase("chrome")) {
     		WebDriverManager.chromedriver().setup();
     		//driver = new ChromeDriver(optionsManager.getChromeOptions());
-    		//Set method is used to set the value to the threadLocal variable, setting the webdriver value
+    		//Set method is used to set the value to the threadLocal variable, setting the web driver value
     		tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
     	}
     	else if(browserName.equalsIgnoreCase("firefox")) {
@@ -89,6 +89,7 @@ public class BasePage {
     	else if(browserName.equalsIgnoreCase("ie")) {
     		WebDriverManager.iedriver().setup();
     		tlDriver.set(new InternetExplorerDriver());
+    		//driver = new InternetExplorerDriver();
     	}
     	else {
     		System.out.println(browserName  + "is not found please give valid browser");
@@ -107,12 +108,12 @@ public class BasePage {
 	//synchronized resource and other threads wait for the resource to become free.
 	
 	public static synchronized WebDriver getDriver() { // this method is giving the driver will replace with tldriver instead of driver
-		//Get method is used to what is the value is set by the threadLocal
+		//Get method is used to get what is the value is set by the threadLocal
 		return tlDriver.get();
 	}
 	
 	/**
-	 * This method is used to take the screenshot whenever test case got failed
+	 * This method is used to take the screenshot whenever the test case got failed
 	 * @return 
 	 */
 	

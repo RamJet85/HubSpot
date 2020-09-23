@@ -30,7 +30,8 @@ public class BaseTest {
 			basePage = new BasePage();
 			prop =basePage.init_properties();// this driver is coming from basePage
 			prop.setProperty("browser", browserName );
-			driver = basePage.init_driver(prop);// Based on the value on the prop file it will launch the browser properties file stored in prop
+			driver = basePage.init_driver(prop);
+			// Based on the value on the prop file it will launch the browser properties file stored in prop
 			loginPage = new LoginPage(driver);
 		}
 	 */
