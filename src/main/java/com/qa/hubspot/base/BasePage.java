@@ -94,15 +94,13 @@ public class BasePage {
     	else {
     		System.out.println(browserName  + "is not found please give valid browser");
     	}
-		
 		getDriver().manage().window().maximize();
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		getDriver().get(prop.getProperty("url"));
 		
 		return getDriver();
-	}
-	
+		}
 	//getDriver using ThreadLocal to provide sync between threads use synchronized keyword
 	//This helps achieve communication between threads such that only one thread accesses the 
 	//synchronized resource and other threads wait for the resource to become free.

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import com.qa.hubspot.base.BaseTest;
 import com.qa.hubspot.utils.Constants;
 
-public class LoginPageTest extends BaseTest{
+public class LoginPageTest extends BaseTest{	
 	
 	//LoginPage loginPage;
 	
