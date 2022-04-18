@@ -47,8 +47,7 @@ public class BasePage {
 		
 		prop = new Properties(); //whenever we need to read the properties from a properties file use properties class
 		try {
-			FileInputStream fs = new FileInputStream("C:\\Automation\\HubSpotTest\\src\\main\\java\\com\\qa\\hubspot\\"
-					+ "config\\config.properties"); // fetch the file
+			FileInputStream fs = new FileInputStream("C:\\Users\\rperabathula\\OneDrive - Entain Group\\Documents\\Secure\\HubSpot\\src\\main\\java\\com\\qa\\hubspot\\config\\config.properties"); // fetch the file
 			try {
 				prop.load(fs); // properties are available in fis, to load all properties into properties class use load method
 			} catch (IOException e) {

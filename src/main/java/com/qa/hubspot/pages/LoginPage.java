@@ -19,7 +19,7 @@ public class LoginPage extends BasePage{
 	By email = By.cssSelector("input#username");
 	By password = By.cssSelector("input#password"); // failed test case
 	By loginBtn = By.xpath("//button[@id='loginBtn']");
-	By SignUpLink = By.linkText("Sign up123");
+	By SignUpLink = By.xpath("//i18n-string[text()='Sign up']");
 	
 //  Constructor of the class
 //	Constructor is used to perform initialization of an object
@@ -47,6 +47,7 @@ public class LoginPage extends BasePage{
 	
 	public boolean isSignUpLinkExists() {
 		//return driver.findElement(SignUpLink).isDisplayed();
+		//elementUtil.waitForAlertToBePresent(SignUpLink, 10);
 		return elementUtil.isDisplayed(SignUpLink);
 	}
 	
