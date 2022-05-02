@@ -102,6 +102,7 @@ public class ElementUtils {
 	public void slectDrodownbyVisibleText(By locator, String value) {
 		Select select = new Select(getElement(locator));
 		select.selectByVisibleText(value);
+		
 
 	}
 
@@ -121,6 +122,7 @@ public class ElementUtils {
 
 		WebElement DropdownList = getElement(locator);
 		Select select = new Select(DropdownList);
+	
 		List<WebElement> OptionsList = select.getOptions();
 
 		for (WebElement ele : OptionsList) {

@@ -95,11 +95,12 @@ public class BasePage {
     	}
 		getDriver().manage().window().maximize();
 		getDriver().manage().deleteAllCookies();
-		getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		getDriver().get(prop.getProperty("url"));
 		
 		return getDriver();
 		}
+	
 	//getDriver using ThreadLocal to provide sync between threads use synchronized keyword
 	//This helps achieve communication between threads such that only one thread accesses the 
 	//synchronized resource and other threads wait for the resource to become free.
@@ -122,9 +123,11 @@ public class BasePage {
 		
 		String path = System.getProperty("user.dir") + "/screenshots/" + System.currentTimeMillis() + ".png";
 		File destination = new File(path);
+		
 				
 		try {
 			FileUtils.copyFile(src, destination);
+	
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
