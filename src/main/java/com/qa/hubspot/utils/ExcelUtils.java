@@ -56,16 +56,13 @@ public class ExcelUtils {
 				}
 			}
 			
-		} catch (FileNotFoundException e) {
+} catch (FileNotFoundException e) {
 			
 			e.printStackTrace();
 		} catch (EncryptedDocumentException e) {
 			
 			e.printStackTrace();
 		} catch (IOException e) {
-			
-			e.printStackTrace();
-		} catch (InvalidFormatException e) {
 			
 			e.printStackTrace();
 		}
